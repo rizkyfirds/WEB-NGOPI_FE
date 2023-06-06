@@ -4,24 +4,39 @@ import search from "../image/search.png";
 import home from "../image/home.png";
 import cart from "../image/cart.png";
 import wishlist from "../image/wishlist.png";
+import logo from "../image/LOGO.png";
 import axios from "axios"
+import { useEffect } from "react";
 
 function MenuCoffee() {
     const [listProd, setProdList] = useState([])
-    axios({
-        method: "GET",
-        url: "http://localhost:3000/product/coffee"
-    }).then((result) => setProdList(result.data.dataProd))
-    //console.log(listProd)
-
+    useEffect(() => {
+        axios({
+            method: "GET",
+            url: "http://localhost:3000/product/coffee"
+        }).then((result) => {
+            setProdList(result.data.dataProd)
+        })
+    }, [])
+    const snack = () => {
+        window.location.replace("/MenuSnack")
+    }
+    const maincourse = () => {
+        window.location.replace("/MenuMainCourse")
+    }
+    const menuothers = () => {
+        window.location.replace("/MenuOthers")
+    }
     return (
-        <div className="h-full bg-primary">
+        <div className="min-h-screen bg-primary">
             <div className="h-1/13">
                 <div className="flex">
-                    <div className="w-4/5"></div>
+                    <div className="w-4/5">
+                        <img src={logo} alt="" className="w-20 h-20 m-6" />
+                    </div>
                     <div className="w-1/5 grid grid-cols-3 gap-2 ">
                         <div>
-                            <img src={user} alt="" className="w-10 h-10 p-1 m-4" />
+                            <img src={user} alt="" className="w-10 h-10 m-4 mt-8" />
                         </div>
                         <div className="col-span-2 m-auto text-center text-xl text-white font-bold">
                             <h3 >{localStorage.getItem("nama")}</h3>
@@ -53,23 +68,26 @@ function MenuCoffee() {
                 <div className="h-1/10">
                     <div className="flex">
                         <p className="w-1/4 text-center text-xs text-[#FF8A00] font-bold">Coffee</p>
-                        <button className="w-1/4 text-center text-xs text-white font-bold">Snack</button>
-                        <button className="w-1/4 text-center text-xs text-white font-bold">Main Course</button>
-                        <button className="w-1/4 text-center text-xs text-white font-bold">Others</button>
+                        <button className="w-1/4 text-center text-xs text-white font-bold" onClick={() => snack()}>Snack</button>
+                        <button className="w-1/4 text-center text-xs text-white font-bold" onClick={() => maincourse()}>Main Course</button>
+                        <button className="w-1/4 text-center text-xs text-white font-bold" onClick={() => menuothers()}>Others</button>
                     </div>
                 </div>
                 <div className="h-9/10">
-                    <div className="flex">
-                        <ul>{listProd.map((value, i) => {
+                    <div className="grid gap-4 grid-cols-4 m-4 content-center">
+                        {listProd.map((value, i) => {
+                            const { product_id, name_prod, desc_prod, price_prod,pict_prod } = value
                             return (
-                                //<div className="flex">
-                                //<div className="grid gap-4 grid-cols-2 m-4">
-                                <div className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2">{value[i]}</div>
-                                //</div>
-                                //</div>
+                                <div>
+                                    <div className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2">
+                                        {product_id}
+                                    </div>
+                                    <p className="text-white font-semibold">{name_prod}</p>
+                                    <p className="text-white">{desc_prod}</p>
+                                    <p className="text-[#FF8A00]">Rp. {price_prod}</p>
+                                </div>
                             )
                         })}
-                        </ul>
                     </div>
                 </div>
             </div>

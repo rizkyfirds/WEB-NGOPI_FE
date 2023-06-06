@@ -4,7 +4,7 @@ import search from "../image/search.png";
 import home from "../image/home.png";
 import cart from "../image/cart.png";
 import wishlist from "../image/wishlist.png";
-function MenuCoffee() {
+function MenuMain() {
     return (
         <div className="h-screen bg-primary">
             <div className="h-1/13">
@@ -76,4 +76,4 @@ function MenuCoffee() {
 
 }
 
-export default MenuCoffee;
+export default MenuMain;
