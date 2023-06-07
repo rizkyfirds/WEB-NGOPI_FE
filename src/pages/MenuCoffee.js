@@ -74,15 +74,15 @@ function MenuCoffee() {
                     </div>
                 </div>
                 <div className="h-9/10">
-                    <div className="grid gap-4 grid-cols-4 m-4 content-center">
+                    <div className="grid gap-8 grid-cols-4 p-8">
                         {listProd.map((value, i) => {
                             const { product_id, name_prod, desc_prod, price_prod,pict_prod } = value
                             return (
-                                <div>
-                                    <div className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2">
-                                        {product_id}
+                                <div className="place-content-center">
+                                    <div className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2 place-items-center">
+                                        {/* <  img src={URL.createObjectURL(pict_prod)} /> */}
                                     </div>
-                                    <p className="text-white font-semibold">{name_prod}</p>
+                                    <p className="text-white font-semibold">- {name_prod}</p>
                                     <p className="text-white">{desc_prod}</p>
                                     <p className="text-[#FF8A00]">Rp. {price_prod}</p>
                                 </div>
@@ -91,7 +91,7 @@ function MenuCoffee() {
                     </div>
                 </div>
             </div>
-            <div className="absolute inset-x-0 bottom-0 h-1/13">
+            <div className="fixed inset-x-0 bottom-0 h-1/13">
                 <div className="flex bg-[#000000]">
                     <div className="w-1/3">
                         <div className="flex justify-center ">
