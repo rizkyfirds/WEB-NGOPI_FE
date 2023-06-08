@@ -28,6 +28,9 @@ function MenuCoffee() {
     const course = () => {
         window.location.replace("/MenuMainCourse")
     }
+    const Menucart = () => {
+        window.location.replace("/Cart")
+    }
     return (
         <div className="min-h-screen bg-primary">
             <div className="h-1/13">
@@ -93,20 +96,22 @@ function MenuCoffee() {
                 </div>
             </div>
             <div className="fixed inset-x-0 bottom-0 h-1/13">
-                <div className="flex bg-[#000000]">
-                    <div className="w-1/3">
-                        <div className="flex justify-center ">
-                            <img src={home} alt="" className="w-10 h-10 p-1 m-4" />
+                <div className="bg-[#000000]">
+                    <div className="grid gap-4 grid-cols-3 place-items-center">
+                        <div>
+                            <div className=" ">
+                                <img src={home} alt="" className="w-10 h-10 p-1 m-4" />
+                            </div>
                         </div>
-                    </div>
-                    <div className="w-1/3">
-                        <div className="flex justify-center ">
-                            <img src={cart} alt="" className="w-10 h-10 p-1 m-4" />
+                        <div>
+                            <button onClick={() => Menucart()}>
+                                <img src={cart} alt="" className="w-10 h-10 p-1 m-4" />
+                            </button>
                         </div>
-                    </div>
-                    <div className="w-1/3">
-                        <div className="flex justify-center ">
-                            <img src={wishlist} alt="" className="w-10 h-10 p-1 m-4" />
+                        <div >
+                            <div className=" ">
+                                <img src={wishlist} alt="" className="w-10 h-10 p-1 m-4" />
+                            </div>
                         </div>
                     </div>
                 </div>

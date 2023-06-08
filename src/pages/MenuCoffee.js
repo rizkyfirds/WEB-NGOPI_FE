@@ -27,6 +27,9 @@ function MenuCoffee() {
     const menuothers = () => {
         window.location.replace("/MenuOthers")
     }
+    const Menucart = () => {
+        window.location.replace("/Cart")
+    }
     return (
         <div className="min-h-screen bg-primary">
             <div className="h-1/13">
@@ -76,7 +79,7 @@ function MenuCoffee() {
                 <div className="h-9/10">
                     <div className="grid gap-8 grid-cols-4 p-8">
                         {listProd.map((value, i) => {
-                            const { product_id, name_prod, desc_prod, price_prod,pict_prod } = value
+                            const { product_id, name_prod, desc_prod, price_prod, pict_prod } = value
                             return (
                                 <div className="place-content-center">
                                     <div className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2 place-items-center">
@@ -92,20 +95,22 @@ function MenuCoffee() {
                 </div>
             </div>
             <div className="fixed inset-x-0 bottom-0 h-1/13">
-                <div className="flex bg-[#000000]">
-                    <div className="w-1/3">
-                        <div className="flex justify-center ">
-                            <img src={home} alt="" className="w-10 h-10 p-1 m-4" />
+                <div className="bg-[#000000]">
+                    <div className="grid gap-4 grid-cols-3 place-items-center">
+                        <div>
+                            <div className=" ">
+                                <img src={home} alt="" className="w-10 h-10 p-1 m-4" />
+                            </div>
                         </div>
-                    </div>
-                    <div className="w-1/3">
-                        <div className="flex justify-center ">
-                            <img src={cart} alt="" className="w-10 h-10 p-1 m-4" />
+                        <div>
+                            <button onClick={() => Menucart()}>
+                                <img src={cart} alt="" className="w-10 h-10 p-1 m-4" />
+                            </button>
                         </div>
-                    </div>
-                    <div className="w-1/3">
-                        <div className="flex justify-center ">
-                            <img src={wishlist} alt="" className="w-10 h-10 p-1 m-4" />
+                        <div >
+                            <div className=" ">
+                                <img src={wishlist} alt="" className="w-10 h-10 p-1 m-4" />
+                            </div>
                         </div>
                     </div>
                 </div>
