@@ -1,12 +1,23 @@
 import React from "react";
 import plus from "../image/plus.png";
 import minus from "../image/minus.png";
+import back from "../image/back.png";
+
+const menu = () => {
+    window.location.replace("/menucoffee")
+}
 
 function cart() {
     return (
         <div className="h-screen bg-primary">
             <div className="h-1/13">
-                <div className="font-bold text-xl text-white p-8">Detail Items</div>
+                <div className="grid gap-2 grid-cols-2">
+                    <div className="font-bold text-xl text-white p-8">Detail Items</div>
+                    <button className=" fixed p-8 right-12" onClick={() => menu()}>
+                        <img src={back} alt="" className="" />
+                    </button>
+
+                </div>
             </div>
             <div className="h-7/13 overflow-y-auto">
                 <div className="grid gap-2 grid-cols-3 p-8">

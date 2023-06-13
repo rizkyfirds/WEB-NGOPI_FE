@@ -16,8 +16,6 @@ function ForgotPassword() {
         setEmail(inputEmail)
     }
     const next = () => {
-        //const setProdList = useState([])
-        //console.log(name, Email)
         const requestingData = {
             nama: name,
             email: Email
@@ -29,7 +27,7 @@ function ForgotPassword() {
         }).then((result) => {
             if (result.data.status === true) {
                 /* eslint-disable no-unused-expressions */
-                localStorage.setItem("userID", result.data.rows[0].user_ID)//masih undefined
+                localStorage.setItem("userID", result.data.rows[0].user_ID)
                 window.location.replace("/changepassword")
             }
         })

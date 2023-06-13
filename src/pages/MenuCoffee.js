@@ -30,6 +30,9 @@ function MenuCoffee() {
     const Menucart = () => {
         window.location.replace("/Cart")
     }
+    const Popup = (id)=> {
+        window.location.replace(`/detailitems/${id}`)
+    }
     return (
         <div className="min-h-screen bg-primary">
             <div className="h-1/13">
@@ -82,10 +85,10 @@ function MenuCoffee() {
                             const { product_id, name_prod, desc_prod, price_prod, pict_prod } = value
                             return (
                                 <div className="place-content-center">
-                                    <div className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2 place-items-center">
+                                    <button className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2 place-items-center" onClick={() => Popup(product_id)}>
                                         {/* <  img src={URL.createObjectURL(pict_prod)} /> */}
-                                    </div>
-                                    <p className="text-white font-semibold">- {name_prod}</p>
+                                    </button>
+                                    <p className="text-white font-semibold ">- {name_prod}</p>
                                     <p className="text-white">{desc_prod}</p>
                                     <p className="text-[#FF8A00]">Rp. {price_prod}</p>
                                 </div>
