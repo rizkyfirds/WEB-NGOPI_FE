@@ -18,7 +18,7 @@ import MenuOthers from './pages/MenuOthers';
 import MenuMainCourse from './pages/MenuMainCourse';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
-import Popup from './pages/popup';
+import DetailProd from './pages/DetailProd';
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
         <Route path="/menuothers" element={<MenuOthers/>} />
         <Route path="/menumaincourse" element={<MenuMainCourse/>} />
         <Route path="/cart" element={<Cart/>} />
-        <Route path="/detailitems/:id" element={<Popup/>} />
+        <Route path="/detailitems/:id" element={<DetailProd/>} />
       </Routes>
     </BrowserRouter>
   );

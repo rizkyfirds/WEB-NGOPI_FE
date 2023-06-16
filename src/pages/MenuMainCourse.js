@@ -30,7 +30,7 @@ function MenuMain() {
     const Menucart = () => {
         window.location.replace("/Cart")
     }
-    const Popup = (id)=> {
+    const DetailProd = (id)=> {
         window.location.replace(`/detailitems/${id}`)
     }
     return (
@@ -85,7 +85,7 @@ function MenuMain() {
                             const { product_id, name_prod, desc_prod, price_prod, pict_prod } = value
                             return (
                                 <div className="place-content-center">
-                                    <button className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2 place-items-center" onClick={() => Popup(product_id)}>
+                                    <button className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2 place-items-center" onClick={() => DetailProd(product_id)}>
                                         {/* <  img src={URL.createObjectURL(pict_prod)} /> */}
                                     </button>
                                     <p className="text-white font-semibold">- {name_prod}</p>

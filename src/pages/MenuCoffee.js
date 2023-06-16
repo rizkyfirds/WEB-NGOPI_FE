@@ -5,8 +5,14 @@ import home from "../image/home.png";
 import cart from "../image/cart.png";
 import wishlist from "../image/wishlist.png";
 import logo from "../image/LOGO.png";
+import id10 from "../image/id10.PNG";
+import id11 from "../image/id10.PNG";
+import id12 from "../image/id10.PNG";
+import id13 from "../image/id10.PNG";
 import axios from "axios"
 import { useEffect } from "react";
+import ReactDOM from 'react-dom';
+
 
 function MenuCoffee() {
     const [listProd, setProdList] = useState([])
@@ -30,9 +36,36 @@ function MenuCoffee() {
     const Menucart = () => {
         window.location.replace("/Cart")
     }
-    const Popup = (id)=> {
+    const DetailProd = (id)=> {
         window.location.replace(`/detailitems/${id}`)
     }
+    // const [imgs,setImgs] = useState()
+
+    // const hanleChnage=(e)=>{
+    //     console.log(e.data)
+    //     // const dataa = new FileReader()
+    //     // dataa.addEventListener('load',()=>{
+    //     //     setImgs(dataa.result)
+    //     // })
+    //     // dataa.readAsDataURL(e.data)
+    // }
+    //console.log(imgs)
+    // const handleConvert = (pictprod) => {
+    //     // Get the base64 string from your data source
+    //     const base64String = pictprod;
+    
+    //     // Create a new Image object
+    //     const img = new Image();
+    
+    //     // Set the source of the image as the base64 string
+    //     img.src = base64String;
+    
+    //     // When the image has finished loading, update the state with the image URL
+    //     img.onload = () => {
+    //       this.setState({ imageUrl: base64String });
+    //     };
+    // }
+
     return (
         <div className="min-h-screen bg-primary">
             <div className="h-1/13">
@@ -85,8 +118,11 @@ function MenuCoffee() {
                             const { product_id, name_prod, desc_prod, price_prod, pict_prod } = value
                             return (
                                 <div className="place-content-center">
-                                    <button className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2 place-items-center" onClick={() => Popup(product_id)}>
-                                        {/* <  img src={URL.createObjectURL(pict_prod)} /> */}
+                                    <button className="w-40 h-52 bg-[#D9D9D9] rounded-lg m-2 place-items-center" onClick={() => DetailProd(product_id)}>
+                                        
+                                        {/* {imageUrl = handleConvert(pict_prod)} */}
+                                        {/* <img src={URL.createObjectURL(`data:image/jpeg;base64,${this.state.pict_prod}`)} /> */}
+                                        {/* <img onChange={hanleChnage(pict_prod)} src={imgs} /> */}
                                     </button>
                                     <p className="text-white font-semibold ">- {name_prod}</p>
                                     <p className="text-white">{desc_prod}</p>

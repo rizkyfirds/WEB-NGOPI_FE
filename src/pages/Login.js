@@ -26,8 +26,7 @@ function Login() {
             url: "http://localhost:3000/users/login",
             data: requestingData
         }).then((result) => {
-            if (result.data) {
-                console.log(result.data)
+            if (result.data.userData[0] != null) {
                 alert("login success")
                 localStorage.setItem("nama", result.data.userData[0].nama)
                 localStorage.setItem("userID", result.data.userData[0].user_ID)
